@@ -1,0 +1,713 @@
+{
+  "RG Sharma": {
+    "runs": 381,
+    "balls": 307,
+    "outs": 12,
+    "fours": 33,
+    "sixes": 14,
+    "average": "31.75",
+    "strikeRate": "124.10"
+  },
+  "SA Yadav": {
+    "runs": 317,
+    "balls": 226,
+    "outs": 14,
+    "fours": 40,
+    "sixes": 10,
+    "average": "22.64",
+    "strikeRate": "140.27"
+  },
+  "Ishan Kishan": {
+    "runs": 241,
+    "balls": 182,
+    "outs": 9,
+    "fours": 21,
+    "sixes": 10,
+    "average": "26.78",
+    "strikeRate": "132.42"
+  },
+  "HH Pandya": {
+    "runs": 127,
+    "balls": 116,
+    "outs": 9,
+    "fours": 11,
+    "sixes": 5,
+    "average": "14.11",
+    "strikeRate": "109.48"
+  },
+  "KH Pandya": {
+    "runs": 143,
+    "balls": 126,
+    "outs": 10,
+    "fours": 10,
+    "sixes": 6,
+    "average": "14.30",
+    "strikeRate": "113.49"
+  },
+  "JJ Bumrah": {
+    "runs": 16,
+    "balls": 17,
+    "outs": 3,
+    "fours": 2,
+    "sixes": 0,
+    "average": "5.33",
+    "strikeRate": "94.12"
+  },
+  "Washington Sundar": {
+    "runs": 31,
+    "balls": 48,
+    "outs": 4,
+    "fours": 2,
+    "sixes": 0,
+    "average": "7.75",
+    "strikeRate": "64.58"
+  },
+  "V Kohli": {
+    "runs": 405,
+    "balls": 347,
+    "outs": 14,
+    "fours": 43,
+    "sixes": 9,
+    "average": "28.93",
+    "strikeRate": "116.71"
+  },
+  "RM Patidar": {
+    "runs": 71,
+    "balls": 65,
+    "outs": 4,
+    "fours": 3,
+    "sixes": 3,
+    "average": "17.75",
+    "strikeRate": "109.23"
+  },
+  "Shahbaz Ahmed": {
+    "runs": 59,
+    "balls": 55,
+    "outs": 7,
+    "fours": 4,
+    "sixes": 2,
+    "average": "8.43",
+    "strikeRate": "107.27"
+  },
+  "HV Patel": {
+    "runs": 59,
+    "balls": 48,
+    "outs": 6,
+    "fours": 6,
+    "sixes": 2,
+    "average": "9.83",
+    "strikeRate": "122.92"
+  },
+  "Mohammed Siraj": {
+    "runs": 20,
+    "balls": 26,
+    "outs": 1,
+    "fours": 1,
+    "sixes": 1,
+    "average": "20.00",
+    "strikeRate": "76.92"
+  },
+  "RD Gaikwad": {
+    "runs": 635,
+    "balls": 474,
+    "outs": 15,
+    "fours": 64,
+    "sixes": 23,
+    "average": "42.33",
+    "strikeRate": "133.97"
+  },
+  "AT Rayudu": {
+    "runs": 257,
+    "balls": 175,
+    "outs": 9,
+    "fours": 16,
+    "sixes": 17,
+    "average": "28.56",
+    "strikeRate": "146.86"
+  },
+  "RA Jadeja": {
+    "runs": 227,
+    "balls": 170,
+    "outs": 4,
+    "fours": 19,
+    "sixes": 9,
+    "average": "56.75",
+    "strikeRate": "133.53"
+  },
+  "MS Dhoni": {
+    "runs": 114,
+    "balls": 111,
+    "outs": 8,
+    "fours": 12,
+    "sixes": 3,
+    "average": "14.25",
+    "strikeRate": "102.70"
+  },
+  "PP Shaw": {
+    "runs": 479,
+    "balls": 308,
+    "outs": 14,
+    "fours": 56,
+    "sixes": 18,
+    "average": "34.21",
+    "strikeRate": "155.52"
+  },
+  "S Dhawan": {
+    "runs": 587,
+    "balls": 480,
+    "outs": 15,
+    "fours": 63,
+    "sixes": 16,
+    "average": "39.13",
+    "strikeRate": "122.29"
+  },
+  "RR Pant": {
+    "runs": 424,
+    "balls": 343,
+    "outs": 13,
+    "fours": 43,
+    "sixes": 10,
+    "average": "32.62",
+    "strikeRate": "123.62"
+  },
+  "N Rana": {
+    "runs": 383,
+    "balls": 325,
+    "outs": 13,
+    "fours": 34,
+    "sixes": 17,
+    "average": "29.46",
+    "strikeRate": "117.85"
+  },
+  "Shubman Gill": {
+    "runs": 478,
+    "balls": 415,
+    "outs": 17,
+    "fours": 50,
+    "sixes": 12,
+    "average": "28.12",
+    "strikeRate": "115.18"
+  },
+  "RA Tripathi": {
+    "runs": 397,
+    "balls": 285,
+    "outs": 15,
+    "fours": 41,
+    "sixes": 11,
+    "average": "26.47",
+    "strikeRate": "139.30"
+  },
+  "KD Karthik": {
+    "runs": 223,
+    "balls": 172,
+    "outs": 10,
+    "fours": 22,
+    "sixes": 7,
+    "average": "22.30",
+    "strikeRate": "129.65"
+  },
+  "WP Saha": {
+    "runs": 131,
+    "balls": 144,
+    "outs": 9,
+    "fours": 7,
+    "sixes": 5,
+    "average": "14.56",
+    "strikeRate": "90.97"
+  },
+  "MK Pandey": {
+    "runs": 292,
+    "balls": 246,
+    "outs": 6,
+    "fours": 21,
+    "sixes": 10,
+    "average": "48.67",
+    "strikeRate": "118.70"
+  },
+  "V Shankar": {
+    "runs": 58,
+    "balls": 52,
+    "outs": 5,
+    "fours": 1,
+    "sixes": 3,
+    "average": "11.60",
+    "strikeRate": "111.54"
+  },
+  "Abdul Samad": {
+    "runs": 111,
+    "balls": 89,
+    "outs": 9,
+    "fours": 4,
+    "sixes": 8,
+    "average": "12.33",
+    "strikeRate": "124.72"
+  },
+  "KL Rahul": {
+    "runs": 626,
+    "balls": 465,
+    "outs": 9,
+    "fours": 48,
+    "sixes": 30,
+    "average": "69.56",
+    "strikeRate": "134.62"
+  },
+  "MA Agarwal": {
+    "runs": 441,
+    "balls": 324,
+    "outs": 12,
+    "fours": 42,
+    "sixes": 18,
+    "average": "36.75",
+    "strikeRate": "136.11"
+  },
+  "DJ Hooda": {
+    "runs": 160,
+    "balls": 125,
+    "outs": 9,
+    "fours": 9,
+    "sixes": 9,
+    "average": "17.78",
+    "strikeRate": "128.00"
+  },
+  "N Pooran": {
+    "runs": 85,
+    "balls": 77,
+    "outs": 10,
+    "fours": 3,
+    "sixes": 5,
+    "average": "8.50",
+    "strikeRate": "110.39"
+  },
+  "M Shahrukh Khan": {
+    "runs": 153,
+    "balls": 118,
+    "outs": 6,
+    "fours": 9,
+    "sixes": 10,
+    "average": "25.50",
+    "strikeRate": "129.66"
+  },
+  "SV Samson": {
+    "runs": 484,
+    "balls": 372,
+    "outs": 12,
+    "fours": 45,
+    "sixes": 17,
+    "average": "40.33",
+    "strikeRate": "130.11"
+  },
+  "M Vohra": {
+    "runs": 42,
+    "balls": 40,
+    "outs": 4,
+    "fours": 5,
+    "sixes": 2,
+    "average": "10.50",
+    "strikeRate": "105.00"
+  },
+  "S Dube": {
+    "runs": 230,
+    "balls": 205,
+    "outs": 8,
+    "fours": 18,
+    "sixes": 10,
+    "average": "28.75",
+    "strikeRate": "112.20"
+  },
+  "R Parag": {
+    "runs": 93,
+    "balls": 84,
+    "outs": 8,
+    "fours": 6,
+    "sixes": 4,
+    "average": "11.63",
+    "strikeRate": "110.71"
+  },
+  "R Tewatia": {
+    "runs": 155,
+    "balls": 152,
+    "outs": 11,
+    "fours": 11,
+    "sixes": 6,
+    "average": "14.09",
+    "strikeRate": "101.97"
+  },
+  "RD Chahar": {
+    "runs": 14,
+    "balls": 15,
+    "outs": 4,
+    "fours": 1,
+    "sixes": 0,
+    "average": "3.50",
+    "strikeRate": "93.33"
+  },
+  "D Padikkal": {
+    "runs": 411,
+    "balls": 342,
+    "outs": 14,
+    "fours": 44,
+    "sixes": 14,
+    "average": "29.36",
+    "strikeRate": "120.18"
+  },
+  "B Kumar": {
+    "runs": 34,
+    "balls": 32,
+    "outs": 2,
+    "fours": 3,
+    "sixes": 0,
+    "average": "17.00",
+    "strikeRate": "106.25"
+  },
+  "AM Rahane": {
+    "runs": 8,
+    "balls": 9,
+    "outs": 1,
+    "fours": 1,
+    "sixes": 0,
+    "average": "8.00",
+    "strikeRate": "88.89"
+  },
+  "Lalit Yadav": {
+    "runs": 68,
+    "balls": 75,
+    "outs": 2,
+    "fours": 7,
+    "sixes": 0,
+    "average": "34.00",
+    "strikeRate": "90.67"
+  },
+  "R Ashwin": {
+    "runs": 44,
+    "balls": 43,
+    "outs": 3,
+    "fours": 2,
+    "sixes": 1,
+    "average": "14.67",
+    "strikeRate": "102.33"
+  },
+  "JD Unadkat": {
+    "runs": 41,
+    "balls": 32,
+    "outs": 2,
+    "fours": 3,
+    "sixes": 2,
+    "average": "20.50",
+    "strikeRate": "128.13"
+  },
+  "M Ashwin": {
+    "runs": 15,
+    "balls": 24,
+    "outs": 2,
+    "fours": 1,
+    "sixes": 0,
+    "average": "7.50",
+    "strikeRate": "62.50"
+  },
+  "Mohammed Shami": {
+    "runs": 13,
+    "balls": 17,
+    "outs": 1,
+    "fours": 0,
+    "sixes": 0,
+    "average": "13.00",
+    "strikeRate": "76.47"
+  },
+  "Abhishek Sharma": {
+    "runs": 98,
+    "balls": 78,
+    "outs": 6,
+    "fours": 7,
+    "sixes": 4,
+    "average": "16.33",
+    "strikeRate": "125.64"
+  },
+  "KK Ahmed": {
+    "runs": 1,
+    "balls": 2,
+    "outs": 1,
+    "fours": 0,
+    "sixes": 0,
+    "average": "1.00",
+    "strikeRate": "50.00"
+  },
+  "CV Varun": {
+    "runs": 2,
+    "balls": 4,
+    "outs": 0,
+    "fours": 0,
+    "sixes": 0,
+    "average": 2,
+    "strikeRate": "50.00"
+  },
+  "SN Thakur": {
+    "runs": 5,
+    "balls": 6,
+    "outs": 1,
+    "fours": 0,
+    "sixes": 0,
+    "average": "5.00",
+    "strikeRate": "83.33"
+  },
+  "Arshdeep Singh": {
+    "runs": 2,
+    "balls": 3,
+    "outs": 0,
+    "fours": 0,
+    "sixes": 0,
+    "average": 2,
+    "strikeRate": "66.67"
+  },
+  "KL Nagarkoti": {
+    "runs": 0,
+    "balls": 2,
+    "outs": 1,
+    "fours": 0,
+    "sixes": 0,
+    "average": "0.00",
+    "strikeRate": "0.00"
+  },
+  "M Prasidh Krishna": {
+    "runs": 0,
+    "balls": 1,
+    "outs": 0,
+    "fours": 0,
+    "sixes": 0,
+    "average": 0,
+    "strikeRate": "0.00"
+  },
+  "C Sakariya": {
+    "runs": 16,
+    "balls": 25,
+    "outs": 4,
+    "fours": 2,
+    "sixes": 0,
+    "average": "4.00",
+    "strikeRate": "64.00"
+  },
+  "S Gopal": {
+    "runs": 7,
+    "balls": 5,
+    "outs": 1,
+    "fours": 0,
+    "sixes": 1,
+    "average": "7.00",
+    "strikeRate": "140.00"
+  },
+  "Shivam Mavi": {
+    "runs": 25,
+    "balls": 21,
+    "outs": 2,
+    "fours": 2,
+    "sixes": 2,
+    "average": "12.50",
+    "strikeRate": "119.05"
+  },
+  "YBK Jaiswal": {
+    "runs": 249,
+    "balls": 168,
+    "outs": 10,
+    "fours": 32,
+    "sixes": 10,
+    "average": "24.90",
+    "strikeRate": "148.21"
+  },
+  "Navdeep Saini": {
+    "runs": 2,
+    "balls": 5,
+    "outs": 1,
+    "fours": 0,
+    "sixes": 0,
+    "average": "2.00",
+    "strikeRate": "40.00"
+  },
+  "YS Chahal": {
+    "runs": 10,
+    "balls": 27,
+    "outs": 0,
+    "fours": 0,
+    "sixes": 0,
+    "average": 10,
+    "strikeRate": "37.04"
+  },
+  "J Suchith": {
+    "runs": 14,
+    "balls": 6,
+    "outs": 0,
+    "fours": 2,
+    "sixes": 1,
+    "average": 14,
+    "strikeRate": "233.33"
+  },
+  "Ravi Bishnoi": {
+    "runs": 1,
+    "balls": 5,
+    "outs": 1,
+    "fours": 0,
+    "sixes": 0,
+    "average": "1.00",
+    "strikeRate": "20.00"
+  },
+  "P Simran Singh": {
+    "runs": 19,
+    "balls": 23,
+    "outs": 2,
+    "fours": 1,
+    "sixes": 1,
+    "average": "9.50",
+    "strikeRate": "82.61"
+  },
+  "Harpreet Brar": {
+    "runs": 64,
+    "balls": 61,
+    "outs": 0,
+    "fours": 3,
+    "sixes": 2,
+    "average": 64,
+    "strikeRate": "104.92"
+  },
+  "Sandeep Sharma": {
+    "runs": 8,
+    "balls": 7,
+    "outs": 0,
+    "fours": 1,
+    "sixes": 0,
+    "average": 8,
+    "strikeRate": "114.29"
+  },
+  "KS Bharat": {
+    "runs": 191,
+    "balls": 161,
+    "outs": 5,
+    "fours": 10,
+    "sixes": 8,
+    "average": "38.20",
+    "strikeRate": "118.63"
+  },
+  "VR Iyer": {
+    "runs": 370,
+    "balls": 299,
+    "outs": 9,
+    "fours": 37,
+    "sixes": 14,
+    "average": "41.11",
+    "strikeRate": "123.75"
+  },
+  "PK Garg": {
+    "runs": 72,
+    "balls": 75,
+    "outs": 5,
+    "fours": 2,
+    "sixes": 3,
+    "average": "14.40",
+    "strikeRate": "96.00"
+  },
+  "S Kaul": {
+    "runs": 8,
+    "balls": 8,
+    "outs": 0,
+    "fours": 1,
+    "sixes": 0,
+    "average": 8,
+    "strikeRate": "100.00"
+  },
+  "SN Khan": {
+    "runs": 0,
+    "balls": 4,
+    "outs": 2,
+    "fours": 0,
+    "sixes": 0,
+    "average": "0.00",
+    "strikeRate": "0.00"
+  },
+  "SS Iyer": {
+    "runs": 175,
+    "balls": 181,
+    "outs": 6,
+    "fours": 7,
+    "sixes": 5,
+    "average": "29.17",
+    "strikeRate": "96.69"
+  },
+  "AR Patel": {
+    "runs": 40,
+    "balls": 52,
+    "outs": 5,
+    "fours": 2,
+    "sixes": 1,
+    "average": "8.00",
+    "strikeRate": "76.92"
+  },
+  "Avesh Khan": {
+    "runs": 5,
+    "balls": 3,
+    "outs": 0,
+    "fours": 1,
+    "sixes": 0,
+    "average": 5,
+    "strikeRate": "166.67"
+  },
+  "RV Uthappa": {
+    "runs": 115,
+    "balls": 86,
+    "outs": 4,
+    "fours": 8,
+    "sixes": 5,
+    "average": "28.75",
+    "strikeRate": "133.72"
+  },
+  "MK Lomror": {
+    "runs": 94,
+    "balls": 76,
+    "outs": 3,
+    "fours": 3,
+    "sixes": 6,
+    "average": "31.33",
+    "strikeRate": "123.68"
+  },
+  "Mandeep Singh": {
+    "runs": 15,
+    "balls": 14,
+    "outs": 1,
+    "fours": 2,
+    "sixes": 0,
+    "average": "15.00",
+    "strikeRate": "107.14"
+  },
+  "RV Patel": {
+    "runs": 25,
+    "balls": 29,
+    "outs": 1,
+    "fours": 3,
+    "sixes": 0,
+    "average": "25.00",
+    "strikeRate": "86.21"
+  },
+  "Kartik Tyagi": {
+    "runs": 2,
+    "balls": 4,
+    "outs": 1,
+    "fours": 0,
+    "sixes": 0,
+    "average": "2.00",
+    "strikeRate": "50.00"
+  },
+  "Anmolpreet Singh": {
+    "runs": 16,
+    "balls": 14,
+    "outs": 1,
+    "fours": 2,
+    "sixes": 1,
+    "average": "16.00",
+    "strikeRate": "114.29"
+  },
+  "Anuj Rawat": {
+    "runs": 0,
+    "balls": 1,
+    "outs": 1,
+    "fours": 0,
+    "sixes": 0,
+    "average": "0.00",
+    "strikeRate": "0.00"
+  }
+}

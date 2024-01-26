@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPL Player Statistics Parallel Coordinates</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+      /* Add some basic styling */
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: #888;
+        shape-rendering: crispEdges;
+      }
+      .line {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 2px;
+        opacity: 1; /* Initial opacity for lines */
+      }
+      .line.active {
+        opacity: 1; /* Full opacity for active line */
+      }
+      .tooltip {
+        position: absolute;
+        background-color: white;
+        border: 1px solid #ddd;
+        padding: 10px;
+        font-size: 12px;
+        pointer-events: none;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 style="margin-top: 30px; margin-left: 40px">
+      IPL 2022 Players Statistics Parallel Coordinates
+    </h3>
+    <script>
+      // Load data using d3.json
+      d3.json("IPL_2022_PLAYERS.json")
+        .then(function (playerData) {
+          // Filter data for players with run rate more than 300
+          var filteredData = Object.entries(playerData).filter(function (d) {
+            return +d[1].runs > 300;
+          });
+
+          // Set up dimensions for the parallel coordinates plot
+          var dimensions = [
+            "runs",
+            "balls",
+            "outs",
+            "fours",
+            "sixes",
+            "average",
+            "strikeRate",
+          ];
+
+          // Set up SVG canvas dimensions
+          var margin = { top: 30, right: 10, bottom: 30, left: 50 },
+            width = 1150,
+            height = 500;
+
+          // Append the SVG canvas to the body of the page
+          var svg = d3
+            .select("body")
+            .append("svg")
+            .style("margin-top", 30)
+            .style("margin-left", 80)
+            .attr("width", width + 100)
+            .attr("height", height + 50)
+            .append("g")
+            .attr(
+              "transform",
+              "translate(" + margin.left + "," + margin.top + ")"
+            );
+
+          // Set up scales
+          var x = d3.scalePoint().range([0, width]).domain(dimensions);
+          var y = {};
+          for (var i in dimensions) {
+            var dim = dimensions[i];
+            y[dim] = d3
+              .scaleLinear()
+              .domain([
+                0,
+                d3.max(filteredData, function (d) {
+                  return +d[1][dim];
+                }),
+              ])
+              .range([height, 0]);
+          }
+
+          // Draw the lines
+          var path = svg
+            .selectAll(".player-path")
+            .data(filteredData)
+            .enter()
+            .append("path")
+            .attr("class", "line")
+            .attr("d", function (d) {
+              return d3.line()(
+                dimensions.map(function (p) {
+                  return [x(p), y[p](d[1][p])];
+                })
+              );
+            })
+            .on("click", function () {
+              // Set opacity for all lines to 0.3
+              svg
+                .selectAll(".line")
+                .classed("active", false)
+                .style("opacity", 0.3)
+                .style("cursor", "pointer");
+              // Set opacity for the clicked line to 1
+              d3.select(this).classed("active", true).style("opacity", 1);
+            })
+            .on("mouseover", function (d) {
+              // Show details in tooltip on hover
+              showTooltip(d);
+            })
+            .on("mouseout", function () {
+              // Hide tooltip on mouseout
+              hideTooltip();
+            });
+
+          // Add transitions to the lines
+          path
+            .transition()
+            .duration(1000) // Set the duration of the transition in milliseconds
+            .attrTween("d", function (d) {
+              var previous = d3.select(this).attr("d");
+              var current = d3.line()(
+                dimensions.map(function (p) {
+                  return [x(p), y[p](d[1][p])];
+                })
+              );
+              // return d3.interpolatePath(previous, current);
+            });
+
+          // Draw the axes
+          svg
+            .selectAll(".axis")
+            .data(dimensions)
+            .enter()
+            .append("g")
+            .attr("class", "axis")
+            .attr("transform", function (d) {
+              return "translate(" + x(d) + ", 0)";
+            })
+            .each(function (d) {
+              d3.select(this).call(d3.axisLeft().scale(y[d]));
+            })
+            .append("text")
+            .style("text-anchor", "middle")
+            .style("fill", "black")
+            .style("font-weight", "bold")
+            .style("font-size", "15px")
+            .attr("transform", "translate(0,-20)")
+            .text(function (d) {
+              return d;
+            });
+
+          // Add a tooltip div
+          var tooltip = d3
+            .select("body")
+            .append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
+          // Function to show tooltip
+          function showTooltip(d) {
+            tooltip.transition().duration(200).style("opacity", 0.9);
+            tooltip
+              .html(
+                "<strong>Player:</strong> " +
+                  d[0] +
+                  "<br><strong>Runs:</strong> " +
+                  d[1].runs +
+                  "<br><strong>Balls:</strong> " +
+                  d[1].balls +
+                  "<br><strong>Outs:</strong> " +
+                  d[1].outs +
+                  "<br><strong>Fours:</strong> " +
+                  d[1].fours +
+                  "<br><strong>Sixes:</strong> " +
+                  d[1].sixes +
+                  "<br><strong>Average:</strong> " +
+                  d[1].average +
+                  "<br><strong>Strike Rate:</strong> " +
+                  d[1].strikeRate
+              )
+              .style("left", d3.event.pageX + 10 + "px")
+              .style("top", d3.event.pageY - 28 + "px");
+          }
+
+          // Function to hide tooltip
+          function hideTooltip() {
+            tooltip.transition().duration(500).style("opacity", 0);
+          }
+        })
+        .catch(function (error) {
+          console.log("Error loading data:", error);
+        });
+    </script>
+  </body>
+</html>

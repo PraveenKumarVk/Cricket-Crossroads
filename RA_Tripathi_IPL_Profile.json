@@ -1,0 +1,57 @@
+{"RA Tripathi":{
+    "2017": {
+      "matchesPlayed": 14,
+      "runsScored": 391,
+      "ballsFaced": 275,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 27.928571428571427,
+      "strikeRate": 142.1818181818182
+    },
+    "2018": {
+      "matchesPlayed": 12,
+      "runsScored": 226,
+      "ballsFaced": 173,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 18.833333333333332,
+      "strikeRate": 130.635838150289
+    },
+    "2019": {
+      "matchesPlayed": 7,
+      "runsScored": 141,
+      "ballsFaced": 122,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 20.142857142857142,
+      "strikeRate": 115.57377049180329
+    },
+    "2020": {
+      "matchesPlayed": 11,
+      "runsScored": 230,
+      "ballsFaced": 186,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 20.90909090909091,
+      "strikeRate": 123.65591397849462
+    },
+    "2021": {
+      "matchesPlayed": 16,
+      "runsScored": 397,
+      "ballsFaced": 285,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 24.8125,
+      "strikeRate": 139.29824561403507
+    },
+    "2022": {
+      "matchesPlayed": 14,
+      "runsScored": 413,
+      "ballsFaced": 271,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 29.5,
+      "strikeRate": 152.39852398523985
+    }
+  }
+}

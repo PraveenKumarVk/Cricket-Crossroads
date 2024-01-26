@@ -1,0 +1,75 @@
+{"HH Pandya":{
+  "2015": {
+    "matchesPlayed": 8,
+    "runsScored": 112,
+    "ballsFaced": 68,
+    "fifties": 0,
+    "hundreds": 0,
+    "avgBatting": 14,
+    "strikeRate": 164.70588235294116
+  },
+  "2016": {
+    "matchesPlayed": 9,
+    "runsScored": 44,
+    "ballsFaced": 66,
+    "fifties": 0,
+    "hundreds": 0,
+    "avgBatting": 4.888888888888889,
+    "strikeRate": 66.66666666666666
+  },
+  "2017": {
+    "matchesPlayed": 16,
+    "runsScored": 250,
+    "ballsFaced": 172,
+    "fifties": 0,
+    "hundreds": 0,
+    "avgBatting": 15.625,
+    "strikeRate": 145.3488372093023
+  },
+  "2018": {
+    "matchesPlayed": 13,
+    "runsScored": 260,
+    "ballsFaced": 205,
+    "fifties": 0,
+    "hundreds": 0,
+    "avgBatting": 20,
+    "strikeRate": 126.82926829268293
+  },
+  "2019": {
+    "matchesPlayed": 15,
+    "runsScored": 409,
+    "ballsFaced": 225,
+    "fifties": 0,
+    "hundreds": 0,
+    "avgBatting": 27.266666666666666,
+    "strikeRate": 181.77777777777777
+  },
+  "2020": {
+    "matchesPlayed": 13,
+    "runsScored": 283,
+    "ballsFaced": 167,
+    "fifties": 0,
+    "hundreds": 0,
+    "avgBatting": 21.76923076923077,
+    "strikeRate": 169.46107784431138
+  },
+  "2021": {
+    "matchesPlayed": 11,
+    "runsScored": 127,
+    "ballsFaced": 116,
+    "fifties": 0,
+    "hundreds": 0,
+    "avgBatting": 11.545454545454545,
+    "strikeRate": 109.48275862068965
+  },
+  "2022": {
+    "matchesPlayed": 15,
+    "runsScored": 487,
+    "ballsFaced": 387,
+    "fifties": 0,
+    "hundreds": 0,
+    "avgBatting": 32.46666666666667,
+    "strikeRate": 125.83979328165375
+  }
+}
+}

@@ -1,0 +1,48 @@
+{"Shubman Gill":{
+    "2018": {
+      "matchesPlayed": 10,
+      "runsScored": 203,
+      "ballsFaced": 142,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 20.3,
+      "strikeRate": 142.95774647887325
+    },
+    "2019": {
+      "matchesPlayed": 13,
+      "runsScored": 296,
+      "ballsFaced": 242,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 22.76923076923077,
+      "strikeRate": 122.31404958677685
+    },
+    "2020": {
+      "matchesPlayed": 14,
+      "runsScored": 440,
+      "ballsFaced": 382,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 31.428571428571427,
+      "strikeRate": 115.18324607329843
+    },
+    "2021": {
+      "matchesPlayed": 17,
+      "runsScored": 478,
+      "ballsFaced": 415,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 28.11764705882353,
+      "strikeRate": 115.18072289156626
+    },
+    "2022": {
+      "matchesPlayed": 16,
+      "runsScored": 483,
+      "ballsFaced": 374,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 30.1875,
+      "strikeRate": 129.14438502673798
+    }
+  }
+}

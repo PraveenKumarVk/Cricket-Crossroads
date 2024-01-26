@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stacked Bar Chart</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+  </head>
+  <style>
+    .mainContainer {
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      width: 1200px;
+      justify-content: flex-start;
+      margin-top: 120px;
+      margin-left: 100px;
+    }
+    .container {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-left: 20px;
+      width: 150px;
+      margin-right: 20px;
+    }
+
+    .container > div {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .container > p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+    .selected {
+      color: rgb(103, 224, 103);
+      background-color: rgb(101, 93, 95);
+      border-radius: 5px;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <script>
+      var data = [
+        {
+          player: "KL Rahul",
+          runs: 616,
+          strikeRate: 130.51,
+          battingAverage: 44,
+        },
+        {
+          player: "HH Pandya",
+          runs: 487,
+          strikeRate: 125.84,
+          battingAverage: 32.5,
+        },
+        {
+          player: "Subman Gill",
+          runs: 483,
+          strikeRate: 130,
+          battingAverage: 30.18,
+        },
+        {
+          player: "S Dhawan",
+          runs: 460,
+          strikeRate: 116.45,
+          battingAverage: 32.85,
+        },
+        {
+          player: "SV Samson",
+          runs: 458,
+          strikeRate: 142.67,
+          battingAverage: 26.94,
+        },
+        {
+          player: "RM Patidar",
+          runs: 333,
+          strikeRate: 143.53,
+          battingAverage: 47.57,
+        },
+        {
+          player: "KD Karthik",
+          runs: 330,
+          strikeRate: 175.54,
+          battingAverage: 20.62,
+        },
+        {
+          player: "Tilak Varma",
+          runs: 397,
+          strikeRate: 126.83,
+          battingAverage: 28.35,
+        },
+        {
+          player: "RA Tripathi",
+          runs: 413,
+          strikeRate: 152.39,
+          battingAverage: 29.5,
+        },
+        {
+          player: "RR Pant",
+          runs: 340,
+          strikeRate: 145.3,
+          battingAverage: 26.15,
+        },
+        {
+          player: "SA Yadav",
+          runs: 303,
+          strikeRate: 134.21,
+          battingAverage: 37.88,
+        },
+      ];
+
+      // Set up dimensions
+      var margin = { top: 20, right: 20, bottom: 30, left: 40 },
+        width = 800 - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
+
+      // Create an SVG container
+      var svg = d3
+        .select("body")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .style("margin-left", "30px")
+        .style("margin-top", "30px")
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      // Define the keys (runs, strikeRate, battingAverage)
+      var keys = ["runs", "strikeRate", "battingAverage"];
+
+      // Stack the data
+      var stackedData = d3.stack().keys(keys)(data);
+
+      // Set up scales
+      var xScale = d3
+        .scaleBand()
+        .domain(data.map((d) => d.player))
+        .range([0, width])
+        .padding(0.1);
+      var yScale = d3
+        .scaleLinear()
+        .domain([0, d3.max(stackedData, (d) => d3.max(d, (d) => d[1]))])
+        .range([height, 0]);
+
+      // Set up color scale
+      var color = d3
+        .scaleOrdinal()
+        .domain(keys)
+        .range(["#1f77b4", "#ff7f0e", "#2ca02c"]);
+
+      // Create and append the bars with transitions
+      svg
+        .selectAll("g")
+        .data(stackedData)
+        .enter()
+        .append("g")
+        .attr("fill", (d) => color(d.key))
+        .selectAll("rect")
+        .data((d) => d)
+        .enter()
+        .append("rect")
+        .attr("x", (d) => xScale(d.data.player))
+        .attr("y", (d) => yScale(0)) // Start from the bottom
+        .attr("height", (d) => yScale(d[0]) - yScale(d[1])) // Initial height is 0
+        .attr("width", xScale.bandwidth())
+        .on("mouseover", function (d) {
+          // Show tooltip on hover
+          tooltip.style("opacity", 0.9);
+          let tooltipContent =
+            "Player: " +
+            d.data.player +
+            "<br/>Runs: " +
+            d.data.runs +
+            "<br/>Strike Rate: " +
+            d.data.strikeRate +
+            "<br/>Batting Average: " +
+            d.data.battingAverage;
+
+          tooltip
+            .html(tooltipContent)
+            .style("left", "70px")
+            .style("position", "absolute")
+            .style("background-color", "#f9f9f9")
+            .style("border", "1px solid #ccc")
+            .style("padding", "10px");
+        })
+        .on("mouseout", function () {
+          // Hide tooltip on mouseout
+          tooltip.style("opacity", 0);
+        })
+        .transition() // Add transition
+        .duration(1000) // Set transition duration in milliseconds
+        .delay(function (d, i) {
+          return i * 100; // Add delay for each bar
+        })
+        .attr("y", (d) => yScale(d[1])) // Final y position
+        .attr("height", (d) => yScale(d[0]) - yScale(d[1])); // Final height
+
+      // Add title
+      svg
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", 0 - margin.top / 3)
+        .attr("text-anchor", "middle")
+        .style("font-size", "16px")
+        .style("text-decoration", "underline")
+        .text("Cumulative Performance Of Selected Players");
+
+      // Add X Axis
+      svg
+        .append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(xScale));
+
+      // Add Y Axis
+      svg.append("g").call(d3.axisLeft(yScale));
+
+      svg
+        .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - 45)
+        .attr("x", 0 - height / 2)
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("Cumulative Performance");
+
+      // Add legend
+      var legend = svg
+        .selectAll(".legend")
+        .data(keys.reverse())
+        .enter()
+        .append("g")
+        .attr("class", "legend")
+        .attr("transform", (d, i) => "translate(0," + i * 20 + ")");
+
+      legend
+        .append("rect")
+        .attr("x", width - 18)
+        .attr("width", 18)
+        .attr("height", 18)
+        .style("fill", color);
+
+      legend
+        .append("text")
+        .attr("x", width - 24)
+        .attr("y", 9)
+        .attr("dy", ".35em")
+        .style("text-anchor", "end")
+        .text((d) => d);
+
+      // Add a tooltip div
+      var tooltip = d3
+        .select("body")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+    </script>
+    <div class="mainContainer">
+      <div class="container">
+        <div>Squad Seletion Criteria</div>
+        <p>5 Batsmens</p>
+        <p>3 fast Bowlers</p>
+        <p>2 spin Bowlers</p>
+        <p>1 All Aounder</p>
+      </div>
+      <div class="container" style="width: 350px">
+        <div>Batsman who played international matches happened in 2022</div>
+        <p>Virat Kohli</p>
+        <p>Rohit Sharma</p>
+        <p class="selected">KL Rahul</p>
+        <p class="selected">Hardik Pandya</p>
+        <p class="selected">Rishabh Pant</p>
+        <p>Shreyas Iyer</p>
+        <p class="selected">Suryakumar Yadav</p>
+        <p class="selected">Subman Gill</p>
+        <p class="selected">Dinesh Karthik</p>
+        <p>Ishan kishan</p>
+        <p>Deepak Hooda</p>
+      </div>
+      <div class="container">
+        <div>Parameters</div>
+        <p>Runs</p>
+        <p>Strike Rate</p>
+        <p>Batting Average</p>
+        <div style="font-size: 18px; color: rgb(51, 207, 51)">
+          66% accurate by considering these 3 Parameters
+        </div>
+      </div>
+      <div class="container">
+        <div>Additional Parameters</div>
+        <p>Age</p>
+        <p>No.of Years Of Experience</p>
+        <p>Consistency</p>
+        <p>Fitness</p>
+        <p>etc..,</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+      var params = new URLSearchParams(window.location.search);
+      var playerName = params.get("player");
+      var year = params.get("year");
+      var keyword = params.get("keyword");
+      var playerNationalities = {};
+      d3.csv("Unique_Players_2022.csv", function(playersData) {
+        playerNationalities[playersData.Player] = playersData.Country;
+        
+      });
+      console.log(playerNationalities);
+      initPieChart(playerName);
+
+      // Set up the SVG canvas dimensions for bar chart
+      var margin = { top: 20, right: 20, bottom: 70, left: 50 }, // Increased bottom margin for x-axis labels
+        width = 600 - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
+
+      // Append the SVG canvas to the body of the page
+      var svg = d3
+        .select("body")
+        .append("svg")
+        .style("margin-Top", "30px")
+        .attr("width", 800)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      d3.json(`IPL_2022_PLAYERS.json`).then(function (data) {
+        // Convert player data to an array
+        var playerArray = Object.entries(data);
+
+        // Scale the range of the data
+        var xScale = d3.scaleBand().range([0, width]).padding(0.1);
+        var yScale = d3.scaleLinear().range([height, 0]);
+        let yLable;
+        let yAxis;
+        // Set the domain of x and y scales
+        xScale.domain(
+          playerArray.map(function (d) {
+            return d[0];
+          })
+        );
+        yScale.domain([
+          0,
+          d3.max(playerArray, function (d) {
+            if (keyword === "runsScored") {
+              yLable = "Runs";
+              yAxis = "runs";
+              return 700;
+            } else if (keyword === "strikeRate") {
+              yLable = "Strike Rate";
+              yAxis = "strikeRate";
+              return 250;
+            } else {
+              yLable = "Batting Average";
+              yAxis = "average";
+              return 65;
+            }
+          }),
+        ]);
+
+        // Add bars to the bar chart
+        svg
+          .selectAll(".bar")
+          .data(playerArray)
+          .enter()
+          .append("rect")
+          .attr("class", "bar")
+          .attr("data-player", function (d) {
+            return d[0];
+          })
+          .attr("x", function (d) {
+            return xScale(d[0]);
+          })
+          .attr("width", xScale.bandwidth())
+          .attr("y", function (d) {
+            return yScale(d[1][yAxis]);
+          })
+          .attr("fill", "blue")
+          .attr("height", function (d) {
+            return height - yScale(d[1][yAxis]);
+          })
+          .on("mouseover", function (d) {
+            // Show tooltip on hover
+            tooltip.style("opacity", 0.9);
+            let tooltipContent =
+              "Player: " + d[0] + `<br/>${yLable} :` + d[1][yAxis];
+
+            // Check a condition for including "Runs" information
+            if (yLable != "Runs") {
+              tooltipContent += `<br/>Runs :` + d[1].runs;
+            }
+            tooltip
+              .html(tooltipContent)
+              .style("left", d3.event.pageX + xScale.bandwidth() / 2 + "px")
+              .style("top", d3.event.pageY - 28 + "px");
+          })
+          .on("mouseout", function (d) {
+            tooltip.style("opacity", 0);
+          });
+
+        d3.selectAll(".bar")
+          .filter(function (d) {
+            return d[0] === playerName; // Corrected line
+          })
+          .attr("fill", "red")
+          .each(function (d) {});
+
+        // // Add the X Axis with player names
+        // svg.append("g")
+        //     .attr("transform", "translate(0," + height + ")")
+        //     .call(d3.axisBottom(xScale))
+        //     .selectAll("text")
+        //     .style("text-anchor", "end")
+        //     .attr("dx", "-.8em")
+        //     .attr("dy", ".15em")
+        //     .attr("transform", "rotate(-45)");
+
+        // Add the X Axis without player names
+        svg
+          .append("g")
+          .attr("transform", "translate(0," + height + ")")
+          .call(d3.axisBottom(xScale))
+          .selectAll(".tick text")
+          .remove(); // Remove player names
+
+        // Add X Axis Label
+        svg
+          .append("text")
+          .attr(
+            "transform",
+            "translate(" + width / 2 + " ," + (height + margin.top + 20) + ")"
+          )
+          .style("text-anchor", "middle")
+          .text("Players");
+
+        // Add the Y Axis with label
+        svg
+          .append("g")
+          .call(d3.axisLeft(yScale))
+          .append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", -40)
+          .attr("dy", "0.71em")
+          .style("text-anchor", "end");
+
+        // Add Y Axis Label
+        svg
+          .append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", 0 - margin.left)
+          .attr("x", 0 - height / 2)
+          .attr("dy", "1em")
+          .style("text-anchor", "middle")
+          .text(yLable);
+
+        // Add a tooltip div
+        var tooltip = d3
+          .select("body")
+          .append("div")
+          .attr("class", "tooltip")
+          .style("opacity", 0);
+
+        svg
+          .append("text")
+          .attr("x", width / 2)
+          .attr("y", 0 - margin.top / 3)
+          .attr("text-anchor", "middle")
+          .style("font-size", "20px")
+          .style("text-decoration", "underline")
+          .text("Batting Statistics for IPL 2022");
+      });
+
+      //-----PieChart-----
+
+      function initPieChart(playerName) {
+        function convertToFilename(name) {
+          return name.replace(/\s+/g, "_") + "_against_bowlers.json";
+        }
+
+        const filename = convertToFilename(playerName);
+
+        // Load data for the pie chart from a JSON file
+        d3.json(filename).then(function (pieChartData) {
+
+          // Create an array of player objects
+          var players = Object.keys(pieChartData).map(function (player) {
+            return {
+              player: player,
+              runs: pieChartData[player].runs,
+              balls: pieChartData[player].balls,
+              fours: pieChartData[player].fours,
+              sixes: pieChartData[player].sixes,
+            };
+          });
+
+          // Filter out players with runs less than or equal to 0
+          players = players.filter(function (player) {
+            return player.runs > 0;
+          });
+
+          // Create a pie chart
+          var pieChart = d3.pie().value(function (d) {
+            return d.runs;
+          });
+
+          var arc = d3
+            .arc()
+            .innerRadius(0)
+            .outerRadius(Math.min(width, height) / 2 - 10);
+
+          var pieSvg = d3
+            .select("body")
+            .append("svg")
+            .attr("width", 400)
+            .attr("height", 400)
+            .append("g")
+            .attr("transform", "translate(" + 200 + "," + 200 + ")");
+
+          var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+          pieSvg
+            .append("text")
+            .attr("x", 0)
+            .attr("y", -height / 2)
+            .attr("text-anchor", "middle")
+            .style("font-size", "20px")
+            .style("margin-bottom", "20px")
+            .style("text-decoration", "underline")
+            .text("Runs Distribution for " + playerName);
+
+          var pie = pieSvg
+            .selectAll(".arc")
+            .data(pieChart(players))
+            .enter()
+            .append("g")
+            .attr("class", "arc");
+
+          var tooltip = d3
+            .select("body")
+            .append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
+          pie
+            .append("path")
+            .attr("d", arc)
+            .attr("fill", function (d) {
+              if(playerNationalities[d.data.player]==="India"){
+                console.log("hi");
+                return "#008080";
+              }
+              else
+              return "#FFBF00";
+            })
+            .on("mouseover", function (d) {
+              pieSvg
+                .append("text")
+                .attr("dy", ".5em")
+                .style("text-anchor", "middle")
+                .style("font-size", 24)
+                .attr("class", "label")
+                .html(
+                  "<tspan x='0' dy='1.2em'>Player: " +
+                    d.data.player +
+                    "</tspan>" +
+                    "<tspan x='0' dy='1.2em'>Runs: " +
+                    d.data.runs +
+                    "</tspan>" +
+                    "<tspan x='0' dy='1.2em'>Fours: " +
+                    d.data.fours +
+                    "</tspan>" +
+                    "<tspan x='0' dy='1.2em'>Sixes: " +
+                    d.data.sixes +
+                    "</tspan>"
+                );
+            })
+
+            .on("mouseout", function (d) {
+              // Hide tooltip on mouseout
+              pieSvg.select(".label").remove();
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

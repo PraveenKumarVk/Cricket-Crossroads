@@ -1,0 +1,394 @@
+{
+  "TA Boult": {
+    "runs": 0,
+    "balls": 0,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "0.00"
+  },
+  "JJ Bumrah": {
+    "runs": 19,
+    "balls": 21,
+    "fours": 2,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "90.48"
+  },
+  "J Yadav": {
+    "runs": 0,
+    "balls": 0,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "0.00"
+  },
+  "Sandeep Sharma": {
+    "runs": 13,
+    "balls": 10,
+    "fours": 2,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "130.00"
+  },
+  "JO Holder": {
+    "runs": 13,
+    "balls": 8,
+    "fours": 2,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "162.50"
+  },
+  "S Nadeem": {
+    "runs": 0,
+    "balls": 0,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "0.00"
+  },
+  "Rashid Khan": {
+    "runs": 21,
+    "balls": 19,
+    "fours": 1,
+    "sixes": 1,
+    "outs": 0,
+    "strikeRate": "110.53"
+  },
+  "T Natarajan": {
+    "runs": 15,
+    "balls": 14,
+    "fours": 2,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "107.14"
+  },
+  "GJ Maxwell": {
+    "runs": 23,
+    "balls": 13,
+    "fours": 2,
+    "sixes": 1,
+    "outs": 0,
+    "strikeRate": "176.92"
+  },
+  "Mohammed Shami": {
+    "runs": 21,
+    "balls": 16,
+    "fours": 4,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "131.25"
+  },
+  "Arshdeep Singh": {
+    "runs": 15,
+    "balls": 8,
+    "fours": 2,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "187.50"
+  },
+  "JDS Neesham": {
+    "runs": 9,
+    "balls": 6,
+    "fours": 1,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "150.00"
+  },
+  "M Ashwin": {
+    "runs": 23,
+    "balls": 11,
+    "fours": 2,
+    "sixes": 1,
+    "outs": 0,
+    "strikeRate": "209.09"
+  },
+  "Ravi Bishnoi": {
+    "runs": 15,
+    "balls": 8,
+    "fours": 1,
+    "sixes": 1,
+    "outs": 0,
+    "strikeRate": "187.50"
+  },
+  "JC Archer": {
+    "runs": 0,
+    "balls": 0,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "0.00"
+  },
+  "JD Unadkat": {
+    "runs": 6,
+    "balls": 4,
+    "fours": 1,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "150.00"
+  },
+  "Kartik Tyagi": {
+    "runs": 18,
+    "balls": 6,
+    "fours": 2,
+    "sixes": 1,
+    "outs": 0,
+    "strikeRate": "300.00"
+  },
+  "BA Stokes": {
+    "runs": 0,
+    "balls": 0,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "0.00"
+  },
+  "S Gopal": {
+    "runs": 13,
+    "balls": 9,
+    "fours": 0,
+    "sixes": 1,
+    "outs": 0,
+    "strikeRate": "144.44"
+  },
+  "R Tewatia": {
+    "runs": 12,
+    "balls": 8,
+    "fours": 2,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "150.00"
+  },
+  "SM Curran": {
+    "runs": 0,
+    "balls": 0,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "0.00"
+  },
+  "JR Hazlewood": {
+    "runs": 2,
+    "balls": 7,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "28.57"
+  },
+  "DL Chahar": {
+    "runs": 0,
+    "balls": 0,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "0.00"
+  },
+  "PP Chawla": {
+    "runs": 0,
+    "balls": 0,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "0.00"
+  },
+  "RA Jadeja": {
+    "runs": 33,
+    "balls": 15,
+    "fours": 4,
+    "sixes": 1,
+    "outs": 0,
+    "strikeRate": "220.00"
+  },
+  "KK Ahmed": {
+    "runs": 7,
+    "balls": 5,
+    "fours": 1,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "140.00"
+  },
+  "B Kumar": {
+    "runs": 5,
+    "balls": 5,
+    "fours": 1,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "100.00"
+  },
+  "Abhishek Sharma": {
+    "runs": 9,
+    "balls": 8,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "112.50"
+  },
+  "KH Pandya": {
+    "runs": 12,
+    "balls": 8,
+    "fours": 0,
+    "sixes": 1,
+    "outs": 0,
+    "strikeRate": "150.00"
+  },
+  "JL Pattinson": {
+    "runs": 0,
+    "balls": 0,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "0.00"
+  },
+  "KA Pollard": {
+    "runs": 8,
+    "balls": 4,
+    "fours": 1,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "200.00"
+  },
+  "RD Chahar": {
+    "runs": 17,
+    "balls": 14,
+    "fours": 1,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "121.43"
+  },
+  "I Udana": {
+    "runs": 0,
+    "balls": 0,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "0.00"
+  },
+  "Washington Sundar": {
+    "runs": 18,
+    "balls": 24,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "75.00"
+  },
+  "Navdeep Saini": {
+    "runs": 7,
+    "balls": 2,
+    "fours": 1,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "350.00"
+  },
+  "YS Chahal": {
+    "runs": 14,
+    "balls": 9,
+    "fours": 2,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "155.56"
+  },
+  "Mohammed Siraj": {
+    "runs": 12,
+    "balls": 9,
+    "fours": 2,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "133.33"
+  },
+  "PJ Cummins": {
+    "runs": 3,
+    "balls": 5,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "60.00"
+  },
+  "Shivam Mavi": {
+    "runs": 5,
+    "balls": 4,
+    "fours": 1,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "125.00"
+  },
+  "CV Varun": {
+    "runs": 5,
+    "balls": 6,
+    "fours": 1,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "83.33"
+  },
+  "SP Narine": {
+    "runs": 0,
+    "balls": 0,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "0.00"
+  },
+  "SN Thakur": {
+    "runs": 16,
+    "balls": 10,
+    "fours": 2,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "160.00"
+  },
+  "KV Sharma": {
+    "runs": 0,
+    "balls": 0,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "0.00"
+  },
+  "DJ Bravo": {
+    "runs": 11,
+    "balls": 9,
+    "fours": 1,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "122.22"
+  },
+  "CH Morris": {
+    "runs": 0,
+    "balls": 0,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "0.00"
+  },
+  "Shahbaz Ahmed": {
+    "runs": 5,
+    "balls": 6,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "83.33"
+  },
+  "VR Aaron": {
+    "runs": 5,
+    "balls": 3,
+    "fours": 1,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "166.67"
+  },
+  "M Prasidh Krishna": {
+    "runs": 6,
+    "balls": 4,
+    "fours": 1,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "150.00"
+  },
+  "SS Cottrell": {
+    "runs": 0,
+    "balls": 0,
+    "fours": 0,
+    "sixes": 0,
+    "outs": 0,
+    "strikeRate": "0.00"
+  }
+}

@@ -1,0 +1,84 @@
+{"KL Rahul":{
+    "2013": {
+      "matchesPlayed": 2,
+      "runsScored": 20,
+      "ballsFaced": 16,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 10,
+      "strikeRate": 125
+    },
+    "2014": {
+      "matchesPlayed": 8,
+      "runsScored": 166,
+      "ballsFaced": 166,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 20.75,
+      "strikeRate": 100
+    },
+    "2015": {
+      "matchesPlayed": 8,
+      "runsScored": 142,
+      "ballsFaced": 133,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 17.75,
+      "strikeRate": 106.76691729323309
+    },
+    "2016": {
+      "matchesPlayed": 12,
+      "runsScored": 397,
+      "ballsFaced": 277,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 33.083333333333336,
+      "strikeRate": 143.32129963898916
+    },
+    "2018": {
+      "matchesPlayed": 14,
+      "runsScored": 659,
+      "ballsFaced": 426,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 47.07142857142857,
+      "strikeRate": 154.69483568075117
+    },
+    "2019": {
+      "matchesPlayed": 14,
+      "runsScored": 593,
+      "ballsFaced": 447,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 42.357142857142854,
+      "strikeRate": 132.66219239373604
+    },
+    "2020": {
+      "matchesPlayed": 14,
+      "runsScored": 676,
+      "ballsFaced": 531,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 48.285714285714285,
+      "strikeRate": 127.30696798493409
+    },
+    "2021": {
+      "matchesPlayed": 13,
+      "runsScored": 626,
+      "ballsFaced": 465,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 48.15384615384615,
+      "strikeRate": 134.6236559139785
+    },
+    "2022": {
+      "matchesPlayed": 14,
+      "runsScored": 616,
+      "ballsFaced": 472,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 44,
+      "strikeRate": 130.5084745762712
+    }
+  }
+}

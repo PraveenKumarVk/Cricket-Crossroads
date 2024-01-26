@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3.js Line and Scatter Chart with Tooltips</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+        .legend {
+            font-size: 12px;
+        }
+
+        .legend rect {
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        // Set up the SVG canvas dimensions
+        var margin = { top: 20, right: 20, bottom: 60, left: 50 };
+        var width = 900;
+        var height = 400;
+
+        // Create SVG element
+        var svg = d3.select("body")
+            .append("svg")
+            .style("margin-Top", "20px")
+            .attr("width", width + 300)
+            .attr("height", height + 50)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        // Add chart title
+        svg.append("text")
+            .attr("x", (width / 2))
+            .attr("y", 0 - (margin.top / 3))
+            .attr("text-anchor", "middle")
+            .style("font-size", "20px")
+            .style("text-decoration", "underline")
+            .text("Highest Runs in IPL 2022");
+
+        // Array of file names for five datasets
+        var datasetFiles = [
+            "HH_Pandya_IPL_Profile.json",
+            "Shubman_Gill_IPL_Profile.json",
+            "KL_Rahul_IPL_Profile.json",
+            "S_Dhawan_IPL_Profile.json",
+            "SV_Samson_IPL_Profile.json"
+        ];
+
+        // Load data using d3.json for all datasets
+        Promise.all(datasetFiles.map(file => d3.json(file)))
+            .then(function (datasets) {
+                // Combine all data for all players
+                var allData = datasets.map((playerData, index) => {
+                    var playerName = Object.keys(playerData)[0]; // Extract player name
+                    return {
+                        name: playerName,
+                        data: Object.entries(playerData[playerName]).map(([year, stats]) => ({
+                            year: +year,  // Convert year to number
+                            runs: +stats.runsScored // Convert runs to number
+                        }))
+                    };
+                });
+
+                // Check for NaN values in the data
+                allData.forEach(player => {
+                    var hasNaN = player.data.some(d => isNaN(d.year) || isNaN(d.runs));
+                    if (hasNaN) {
+                        console.error("NaN values found in the data for", player.name);
+                    } else {
+                        console.log("Data loaded successfully for", player.name);
+                    }
+                });
+
+                // Define scales
+                var x = d3.scaleLinear().range([0, width]);
+                var y = d3.scaleLinear().range([height, 0]);
+
+                // Set domain for scales based on the maximum values across all players
+                x.domain([
+                    d3.min(allData, player => d3.min(player.data, d => d.year)),
+                    d3.max(allData, player => d3.max(player.data, d => d.year))
+                ]);
+                y.domain([
+                    0,
+                    d3.max(allData, player => d3.max(player.data, d => d.runs))
+                ]);
+
+                // Add X Axis
+                svg.append("g")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(x));
+
+                svg.append("text")
+                    .attr("transform", "translate(" + (width / 2) + " ," + (height + margin.top + 30) + ")")
+                    .style("text-anchor", "middle")
+                    .text("Years")
+                    .attr("class", "x-axis-label");
+
+                // Add Y Axis
+                svg.append("g")
+                    .call(d3.axisLeft(y));
+
+                // Add Y Axis Label
+                svg.append("text")
+                    .attr("transform", "rotate(-90)")
+                    .attr("y", 0 - margin.left)
+                    .attr("x", 0 - (height / 2))
+                    .attr("dy", "1em")
+                    .style("text-anchor", "middle")
+                    .text("Runs");
+
+                // Create a line function
+                var line = d3.line()
+                    .x(function (d) { return x(d.year); })
+                    .y(function (d) { return y(d.runs); });
+
+                // Add lines for each player
+                allData.forEach(player => {
+                    // Add line
+                    svg.append("path")
+                        .data([player.data])
+                        .attr("class", "line " + player.name)
+                        .style("stroke", getColor(player.name)) // Assign color based on player name
+                        .attr("fill", "none")
+                        .transition() // Add transition for the line
+                        .duration(1000)
+                        .attr("d", line);
+
+                    // Add circles
+                    svg.selectAll("circle." + player.name)
+                        .data(player.data)
+                        .enter().append("circle")
+                        .attr("class", "circle " + player.name)
+                        .attr("cx", d => x(d.year))
+                        .attr("cy", d => y(d.runs))
+                        .attr("r", 2)
+                        .style("fill", getColor(player.name))
+                        .on("mouseover", function (d) {
+                            // Show text box on hover
+                            var textBox = svg.append("g")
+                                .attr("class", "hover-text-box");
+
+                            textBox.append("rect")
+                                .attr("x", x(d.year) + 10)
+                                .attr("y", y(d.runs) - 60)
+                                .attr("width", 150)
+                                .attr("height", 70)
+                                .attr("fill", "white")
+                                .attr("stroke", "black");
+
+                            textBox.append("text")
+                                .attr("x", x(d.year) + 11)
+                                .attr("y", y(d.runs) - 40)
+                                .text("Player: " + player.name)
+                                .attr("fill", "black");
+
+                            textBox.append("text")
+                                .attr("x", x(d.year) + 25)
+                                .attr("y", y(d.runs) - 20)
+                                .text("Year: " + d.year)
+                                .attr("fill", "black");
+
+                            textBox.append("text")
+                                .attr("x", x(d.year) + 25)
+                                .attr("y", y(d.runs) - 2)
+                                .text("Runs: " + d.runs)
+                                .attr("fill", "black");
+                        })
+                        .on("mouseout", function () {
+                            // Remove text box on mouseout
+                            svg.select(".hover-text-box").remove();
+                        })
+                        .on("click", function (d) {
+                            var otherPageUrl = "./barchart.html"; // Replace with the actual URL
+                            var params = new URLSearchParams({
+                                player: player.name,
+                                year: d.year,
+                                keyword: "runs"
+                            });
+                            window.location.href = otherPageUrl + "?" + params.toString();
+                        })
+                        .transition() // Add transition for the circles
+                        .duration(1000)
+                        .attr("r", 4);
+
+                    svg.on("click", function () {
+                        // Remove highlight from all lines
+                        svg.selectAll(".line").style("stroke-width", "1px");
+                        // Highlight the clicked line
+                        svg.selectAll(".x-axis-label").style("stroke-width", "3px");
+                    });
+                });
+
+
+                // Add Legends
+                var legend = svg.selectAll(".legend")
+                    .data(allData)
+                    .enter().append("g")
+                    .attr("class", "legend")
+                    .attr("transform", function (d, i) { return "translate(0," + i * 20 + ")"; });
+
+                legend.append("rect")
+                    .attr("x", width + 10)
+                    .attr("width", 10)
+                    .attr("height", 10)
+                    .style("fill", d => getColor(d.name));
+
+                legend.append("text")
+                    .attr("x", width + 30)
+                    .attr("y", 5)
+                    .attr("dy", ".35em")
+                    .style("text-anchor", "start")
+                    .text(d => d.name);
+            })
+            .catch(function (error) {
+                console.error("Error loading datasets:", error);
+            });
+
+        // Function to get color based on player name
+        function getColor(playerName) {
+            switch (playerName) {
+                case "HH Pandya": return "blue";
+                case "Shubman Gill": return "red";
+                case "KL Rahul": return "green";
+                case "S Dhawan": return "purple";
+                case "SV Samson": return "orange";
+                default: return "black";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

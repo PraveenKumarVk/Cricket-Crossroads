@@ -1,0 +1,93 @@
+{"SV Samson":{
+    "2013": {
+      "matchesPlayed": 10,
+      "runsScored": 206,
+      "ballsFaced": 179,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 20.6,
+      "strikeRate": 115.08379888268156
+    },
+    "2014": {
+      "matchesPlayed": 13,
+      "runsScored": 339,
+      "ballsFaced": 280,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 26.076923076923077,
+      "strikeRate": 121.07142857142857
+    },
+    "2015": {
+      "matchesPlayed": 11,
+      "runsScored": 204,
+      "ballsFaced": 166,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 18.545454545454547,
+      "strikeRate": 122.89156626506023
+    },
+    "2016": {
+      "matchesPlayed": 14,
+      "runsScored": 291,
+      "ballsFaced": 265,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 20.785714285714285,
+      "strikeRate": 109.81132075471697
+    },
+    "2017": {
+      "matchesPlayed": 14,
+      "runsScored": 386,
+      "ballsFaced": 275,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 27.571428571428573,
+      "strikeRate": 140.36363636363635
+    },
+    "2018": {
+      "matchesPlayed": 15,
+      "runsScored": 441,
+      "ballsFaced": 325,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 29.4,
+      "strikeRate": 135.69230769230768
+    },
+    "2019": {
+      "matchesPlayed": 11,
+      "runsScored": 342,
+      "ballsFaced": 238,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 31.09090909090909,
+      "strikeRate": 143.69747899159663
+    },
+    "2020": {
+      "matchesPlayed": 14,
+      "runsScored": 375,
+      "ballsFaced": 242,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 26.785714285714285,
+      "strikeRate": 154.95867768595042
+    },
+    "2021": {
+      "matchesPlayed": 14,
+      "runsScored": 484,
+      "ballsFaced": 372,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 34.57142857142857,
+      "strikeRate": 130.10752688172042
+    },
+    "2022": {
+      "matchesPlayed": 17,
+      "runsScored": 458,
+      "ballsFaced": 321,
+      "fifties": 0,
+      "hundreds": 0,
+      "avgBatting": 26.941176470588236,
+      "strikeRate": 142.6791277258567
+    }
+  }
+}
